@@ -145,7 +145,7 @@ function StoreScreen({products}: {products: Product[]}) {
                   ) : (
                     <div className="my-12 flex flex-col gap-4">
                       <h2 className="text-center text-xl text-muted-foreground">
-                        No hay productos
+                        No hay productos :(
                       </h2>
                     </div>
                   )}
