@@ -124,7 +124,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                 className="inline-flex flex-center mb-8 mt-2 justify-center items-center"
               >  
                 <div>
-                  Sitio creado con
+                  Creado con
                 </div>
                 <a href="https://ferreteros.app" className="ml-2">
                   <img alt="Ferreteros.app" src={"/assets/ferreteros-app-black.png"} className="h-6 mb-1"/>
