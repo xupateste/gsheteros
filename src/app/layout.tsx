@@ -126,7 +126,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                 <div>
                   Sitio creado con
                 </div>
-                <a href="/" className="ml-2">
+                <a href="https://ferreteros.app" className="ml-2">
                   <img alt="Ferreteros.app" src={"/assets/ferreteros-app-black.png"} className="h-6 mb-1"/>
                 </a>
               </div>
