@@ -18,13 +18,13 @@ function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Produ
     <>
       <div
         key={product.id}
-        className="flex-col border-white/300 cursor-pointer relative justify-between rounded-md border p-1 sm:p-2 pb-2 bg-gray-50 dark:bg-gray-800"
+        className="border-white/300 relative cursor-pointer flex-col justify-between rounded-md border bg-gray-50 p-1 pb-2 dark:bg-gray-800 sm:p-2"
         data-testid="product"
         onClick={() => {
           setIsModalOpen(true);
         }}
       >
-        <div className="flex-col space-between relative">
+        <div className="space-between relative flex-col">
           {product.image ? (
             <img
               alt={product.title}

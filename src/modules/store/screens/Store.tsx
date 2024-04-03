@@ -3,22 +3,21 @@
 import type {Product} from "~/product/types";
 
 import {useMemo, useState} from "react";
-import {SearchIcon, X, Table, StretchHorizontal, ChevronDown} from "lucide-react";
+import {SearchIcon, X, ChevronDown} from "lucide-react";
 
 import {useCart} from "~/cart/context/client";
 import ProductCard from "~/product/components/ProductCard";
 
 import {cn} from "@/lib/utils";
 import {Input} from "@/components/ui/input";
-import {Toggle} from "@/components/ui/toggle";
+// import {Toggle} from "@/components/ui/toggle";
 
 function StoreScreen({products}: {products: Product[]}) {
   const [, {addItem}] = useCart();
   const [query, setQuery] = useState<string>("");
-  const [layout, setLayout] = useState<"list" | "grid">(() =>
+  const [layout,] = useState<"list" | "grid">(() =>
     products.length > 30 ? "list" : "grid",
   );
-  const [selectedCategory, setSelectedCategory] = useState<Product["category"] | null>(null);
   const categories = useMemo<[Product["category"], Product[]][]>(() => {
     let draft = products;
 
@@ -43,6 +42,8 @@ function StoreScreen({products}: {products: Product[]}) {
     // Return them in a tuple of [category, products]
     return Array.from(groups.entries());
   }, [query, products]);
+  const [selectedCategory, setSelectedCategory] = useState<Product["category"] | null>(categories[0][0]);
+  // console.log(categories)
 
   function handleSelectCategory(category: Product["category"]) {
     setSelectedCategory((currentSelectedCategory) =>
@@ -72,7 +73,7 @@ function StoreScreen({products}: {products: Product[]}) {
          className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-1 bg-background py-4"
         id="filters"
       >
-        <div className="relative flex w-full items-center pl-3">
+        <div className="relative flex w-full items-center px-3">
           <SearchIcon className="absolute left-6 h-4 w-4 text-gray-700"/>
           <Input
             className="px-9 text-base bg-white dark:bg-gray-250 text-gray-700"
@@ -87,7 +88,7 @@ function StoreScreen({products}: {products: Product[]}) {
             />
           )}
         </div>
-        <div className="flex gap-1 pr-2">
+        {/*<div className="flex gap-1 pr-2">
           <Toggle
             aria-label="Vista de lista"
             pressed={layout === "list"}
@@ -110,7 +111,7 @@ function StoreScreen({products}: {products: Product[]}) {
               <Table className="h-6 w-6 cursor-pointer opacity-40" />
             </div>
           </Toggle>
-        </div>
+        </div>*/}
       </div>
       {/* Grid of products by category */}
       <div className="flex flex-col">

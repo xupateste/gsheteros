@@ -3,7 +3,7 @@ import type {Metadata} from "next";
 import api from "~/store/api";
 import CartProvider from "~/cart/context";
 import ThemeProvider from "~/theme/context";
-import ThemeToggle from "~/theme/components/ThemeToggle";
+// import ThemeToggle from "~/theme/components/ThemeToggle";
 
 import InstagramIcon from "@/components/icons/instagram";
 import WhatsappIcon from "@/components/icons/whatsapp";
@@ -120,11 +120,9 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
             </main>
             <footer className="px-4  text-center">
               {/* Inicio de copyright - Cambiar el contenido de los mismos viola el contenido de los terminos de licencia */}
-              <div
-                className="inline-flex flex-center mb-8 mt-2 justify-center items-center"
-              >  
+              <div className="inline-flex flex-center mb-8 mt-2 justify-center items-center">  
                 <div>
-                  Creado con
+                  Sition creado con
                 </div>
                 <a href="https://ferreteros.app" className="ml-2">
                   <img alt="Ferreteros.app" src={"/assets/ferreteros-app-black.png"} className="h-6 mb-1"/>
