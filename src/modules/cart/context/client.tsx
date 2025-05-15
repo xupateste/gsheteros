@@ -101,7 +101,7 @@ function CartProviderClient({
         {children}
         {/* Cart button */}
         {Boolean(quantity) && (
-          <div className="sticky bottom-0 flex content-center items-center p-4 sm:m-auto">
+          <div className="sticky bottom-0 flex content-center items-center p-6 sm:m-auto">
             <Button
               aria-label="Ver pedido"
               className="m-auto w-full shadow-lg sm:w-fit"
